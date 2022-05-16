@@ -87,7 +87,7 @@
 <meta property="og:description" content="前言为什么要自己搭建博客?你看技术大神们哪个没有自己的优秀博客通过做笔记的方式对学习历程进行记录，对所学的知识形成⽂章也是对⾃⼰的交代不懂技术的小伙伴也可以在自己的小天地写文，很爽又很有逼格是不是~ 用知乎、CSDN等站点进行写作不行吗？当然可以，但是自行建站，一切都可以自己定制，毫无限制，你的地盘你做主拥有属于自己的独立博客   自由，自在~可以看看这篇文章：刘未鹏 | Mind Hacks">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-05-15T16:51:37.000Z">
-<meta property="article:modified_time" content="2022-05-15T18:09:26.271Z">
+<meta property="article:modified_time" content="2022-05-16T16:43:38.973Z">
 <meta property="article:author" content="Mr. X">
 <meta property="article:tag" content="博客搭建">
 <meta name="twitter:card" content="summary">
@@ -402,7 +402,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  454
+                  1.4k
                 </span>
               
 
@@ -418,7 +418,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  5
                 </span>
               
             </div>
@@ -448,7 +448,7 @@
 <li>注册Github账号</li>
 <li>创建Repository #仓库</li>
 <li>安装Git</li>
-<li>将Git与GitHub帐号绑定</li>
+<li>将Git与GitHub账号绑定</li>
 </ul>
 </li>
 <li>第二部分 搭建Hexo博客 安装及相关配置<ul>
@@ -459,7 +459,17 @@
 </li>
 </ol>
 <hr>
-<h1 id="Github的安装及相关配置"><a href="#Github的安装及相关配置" class="headerlink" title="Github的安装及相关配置"></a>Github的安装及相关配置</h1><h2 id="注册Github账号"><a href="#注册Github账号" class="headerlink" title="注册Github账号"></a>注册Github账号</h2><h2 id="创建Repository-仓库"><a href="#创建Repository-仓库" class="headerlink" title="创建Repository #仓库"></a>创建Repository #仓库</h2><h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><h2 id="将Git与GitHub帐号绑定"><a href="#将Git与GitHub帐号绑定" class="headerlink" title="将Git与GitHub帐号绑定"></a>将Git与GitHub帐号绑定</h2><h1 id="搭建Hexo博客-安装及相关配置"><a href="#搭建Hexo博客-安装及相关配置" class="headerlink" title="搭建Hexo博客 安装及相关配置"></a>搭建Hexo博客 安装及相关配置</h1><h2 id="安装Node-js-依赖环境"><a href="#安装Node-js-依赖环境" class="headerlink" title="安装Node.js #依赖环境"></a>安装Node.js #依赖环境</h2><h2 id="安装Hexo框架"><a href="#安装Hexo框架" class="headerlink" title="安装Hexo框架"></a>安装Hexo框架</h2><h2 id="将博客部署到github-io-发布网站"><a href="#将博客部署到github-io-发布网站" class="headerlink" title="将博客部署到github.io #发布网站"></a>将博客部署到github.io #发布网站</h2>
+<h1 id="Github的安装及相关配置"><a href="#Github的安装及相关配置" class="headerlink" title="Github的安装及相关配置"></a>Github的安装及相关配置</h1><h2 id="注册Github账号"><a href="#注册Github账号" class="headerlink" title="注册Github账号"></a>注册Github账号</h2><p>由于网站是托管在Github上的，所以首先需要创建Github的账户<br>访问<a href="/https://github.com/">Github官网</a> 右上角<code>Sign up</code>开始创建</p>
+<h2 id="创建Repository-仓库"><a href="#创建Repository-仓库" class="headerlink" title="创建Repository #仓库"></a>创建Repository #仓库</h2><p>注册好Github账户后，继续创建用于托管网站的仓库，按目前的Github网页排版可点击<br><code>New</code>、<code>Start a project</code>、<code>New repository</code>这三个位置进行仓库的创建<br>图1![图片alt](图片地址 ‘’图片title’’)<br>Repository 仓库名字的格式应该是 <code>username.github.io</code> 也就是你创建好博客后的域名<br>其中username保持与注册用户名一致<br>例如我的username是mysterious-X 仓库名则为<code>mysterious-X.github.io</code><br>图2<br>其余选项可以按需，博主是全部保持的默认，<br>最后下拉到底，点击<code>Creat repository</code>完成仓库创建</p>
+<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><p>Git是什么？参照廖雪峰老师博客中的说法，Git是 目前主流的、开源的分布式版本控制系统，尤其是2008年，GitHub网站上线了，它为开源项目免费提供Git存储，无数开源项目开始迁移至GitHub，包括jQuery，PHP，Ruby等等。更多详细介绍请移步至此 <a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600/896202815778784">Git的诞生</a><br>最简单的理解就是网站在本地搭建好后，需要使用Git同步到GitHub上进行托管及上线<br>很多博主在搭建时都推荐了<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600/896067074338496">廖雪峰老师的Git教程</a> 其中包括了linux、Mac OS、Windows的安装教程。<br>本博客是通过windows系统搭建的，但无奈廖老师的windows部分的教程选择的是默认安装…<br>而我又对众多的选项非常好奇，本着求知欲，所以又多找了几份关于Windows系统的，带图带翻译和详细步骤讲解的安装教程，可以对比着看。<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/mukes/article/details/115693833">Git 详细安装教程1</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44486583/article/details/122704375">Git 详细安装教程2</a><br>Git官方windows版下载传送门→<a target="_blank" rel="noopener" href="https://git-scm.com/download/win">Git Download for Windows</a> </p>
+<h2 id="将Git与GitHub帐号绑定"><a href="#将Git与GitHub帐号绑定" class="headerlink" title="将Git与GitHub帐号绑定"></a>将Git与GitHub帐号绑定</h2><p>Git安装完成后在桌面任意位置右键菜单点击<code>Git Bash here</code>或者在菜单里搜索<code>Git Bash</code>并打开<br>设置user.name和user.email配置信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;你的GitHub用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的GitHub注册邮箱&quot;</span><br></pre></td></tr></table></figure>
+<p>生成配置SSH Key 密钥</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;你的GitHub注册邮箱&quot;</span><br></pre></td></tr></table></figure>
+<p>然后直接一键三连(三次回车)，默认不需要设置密码<br>最后看到这样的界面，就成功生成ssh key了<br>图3<br>配置SSH key 用来将本地git项目与github联系<br>找到生成的.ssh的文件夹(如上图中标记位置查看自己的，每个人的路径都不一样)，<br>将其中的<code>id_rsa.pub</code>密钥内的全部内容复制，<br>#没找到的勾选一下文件扩展名 隐藏的项目<br>打开<a target="_blank" rel="noopener" href="https://github.com/settings/keys">GitHub_Settings_keys</a>页面，<br>#如链接失效，也可在github上点右上角头像下拉菜单 -&gt; 点击Settings -&gt; 左侧列表中点开SSH and GPG keys -&gt; 点击<code>New SSH key</code><br>图未知数量<br>图<br>Title：可以任意填写，我写的是myBlog<br>Key：将刚刚复制的<code>id_rsa.pub</code>密钥内容粘贴至此<br>点击<code>Add SSH key</code>完成<br>最后在Git Bash中检测GitHub公钥设置是否成功，<br>输入以下代码 不要改任何一个字 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh git@github.com</span><br></pre></td></tr></table></figure>
+<p>图4<br>如上则说明成功。这里之所以设置GitHub密钥原因是，通过非对称加密的公钥与私钥来完成加密，公钥放置在GitHub上，私钥放置在自己的电脑里。GitHub要求每次推送代码都是合法用户，所以每次推送都需要输入账号密码验证推送用户是否是合法用户，为了省去每次输入密码的步骤，采用了ssh，当你推送的时候，git就会匹配你的私钥跟GitHub上面的公钥是否是配对的，若是匹配就认为你是合法用户，则允许推送。这样可以保证每次的推送都是正确合法的。</p>
+<h1 id="搭建Hexo博客-安装及相关配置"><a href="#搭建Hexo博客-安装及相关配置" class="headerlink" title="搭建Hexo博客 安装及相关配置"></a>搭建Hexo博客 安装及相关配置</h1><h2 id="安装Node-js-依赖环境"><a href="#安装Node-js-依赖环境" class="headerlink" title="安装Node.js #依赖环境"></a>安装Node.js #依赖环境</h2><h2 id="安装Hexo框架"><a href="#安装Hexo框架" class="headerlink" title="安装Hexo框架"></a>安装Hexo框架</h2><h2 id="将博客部署到github-io-发布网站"><a href="#将博客部署到github-io-发布网站" class="headerlink" title="将博客部署到github.io #发布网站"></a>将博客部署到github.io #发布网站</h2>
       
     </div>
     
@@ -663,7 +673,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">536</span>
+    <span title="Site words total count">1.5k</span>
   
 </div>
 
