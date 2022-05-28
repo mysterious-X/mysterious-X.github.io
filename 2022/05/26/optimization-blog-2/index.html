@@ -28,7 +28,7 @@
 <meta property="og:description" content="emm…由于对某些next5.1.4当中没有实现的功能存有执念…，于是便有了此篇文章……">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-26T10:07:52.000Z">
-<meta property="article:modified_time" content="2022-05-27T18:59:58.749Z">
+<meta property="article:modified_time" content="2022-05-28T15:02:24.167Z">
 <meta property="article:author" content="Mr. X">
 <meta property="article:tag" content="博客搭建">
 <meta property="article:tag" content="学习笔记">
@@ -225,7 +225,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-28 02:59:58" itemprop="dateModified" datetime="2022-05-28T02:59:58+08:00">2022-05-28</time>
+                <time title="修改时间：2022-05-28 23:02:24" itemprop="dateModified" datetime="2022-05-28T23:02:24+08:00">2022-05-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -245,20 +245,23 @@
                 </span>
             </span>
 
-          <br>
+          
+              <span>&emsp;</span><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span><br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>9.1k</span>
+              <span>13k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>8 分钟</span>
+              <span>11 分钟</span>
             </span>
 
         </div>
@@ -320,12 +323,12 @@
 <h1 id="底部栏小心心"><a href="#底部栏小心心" class="headerlink" title="底部栏小心心"></a>底部栏小心心</h1><p>next 7.x的底部栏默认自带的，红心可以跳动了<br>修改主题配置文件定位到<code>Icon</code>进行如下修改</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Icon between year and copyright info.</span></span><br><span class="line">icon:</span><br><span class="line">  <span class="comment"># Icon name in Font Awesome. See: https://fontawesome.com/icons</span></span><br><span class="line">  name: fa fa-heart   <span class="comment">#心型图标</span></span><br><span class="line">  <span class="comment"># If you want to animate the icon, set it to true.</span></span><br><span class="line">  animated: <span class="literal">true</span>      <span class="comment">#是否开启跳动动画   </span></span><br><span class="line">  <span class="comment"># Change the color of icon, using Hex Code.</span></span><br><span class="line">  color: <span class="string">&quot;#ff0000&quot;</span>    <span class="comment">#默认颜色 红</span></span><br></pre></td></tr></table></figure>
 <p>然后如果想要换图标的话配置文件内的网址我试了不太好使<br><a target="_blank" rel="noopener" href="https://fontawesome.com/icons">https://fontawesome.com/icons</a><br>可以参考这个网址 我是将<code>fa fa-heart</code>换为了<code>fa fa-heartbeat</code><br><a target="_blank" rel="noopener" href="https://www.thinkcmf.com/font/search/index.html">https://www.thinkcmf.com/font/search/index.html</a></p>
-<h1 id="修改文章底部的-号标签"><a href="#修改文章底部的-号标签" class="headerlink" title="修改文章底部的#号标签"></a>修改文章底部的#号标签</h1><p>在next主题目录&#x2F;layout&#x2F;_macro&#x2F;找到post.swig文件，搜索 <code>rel=&quot;tag&quot;&gt;#</code><br>此处通过对比之前的主题的post.swig文件的此处，可以发现，在<code>&lt;div class=&quot;post-tags&quot;&gt;</code>的前面加入了一段<code>if</code>判断的语句，让<code>rel=&quot;tag&quot;&gt;</code>去找<code>tag_indicate</code>获取参数，并且默认已经将<code>&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;</code>写入在内了，但是不知道为什么试了好久都不生效，一直被判断结果为 # 号。<br>博主试了好久也没找到使之生效的办法。<br>最终通过以下两种方式实现了，<br>第一个方法简单粗暴，直接将此 if 判断段落删除，(全部 #号注释掉或直接删除此段)</p>
+<h1 id="修改文章底部的-号标签"><a href="#修改文章底部的-号标签" class="headerlink" title="修改文章底部的#号标签"></a>修改文章底部的#号标签</h1><p>文章底部标签前的#好修改为标签符号，在7.x主题中已经内置好了，正常是只需要到主题配置文件中定位到<code>tag_icon</code>修改为<code>true</code>即可，不需要修改其他地方<br>如果修改true后未生效可继续参考以下配置。<br>在next主题目录&#x2F;layout&#x2F;_macro&#x2F;找到post.swig文件，搜索 <code>rel=&quot;tag&quot;&gt;#</code><br>此处通过对比之前的主题的post.swig文件的此处，可以发现，在<code>&lt;div class=&quot;post-tags&quot;&gt;</code>的前面加入了一段<code>if</code>判断的语句，让<code>rel=&quot;tag&quot;&gt;</code>去找<code>tag_indicate</code>获取参数，并且默认已经将<code>&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;</code>写入在内了,如果不生效一直被判断结果为 # 号的话。<br>可以通过以下两种方式实现，<br>第一个方法简单粗暴，直接将此 if 判断段落删除，(全部 #号注释掉或直接删除此段)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#          &#123;%- if theme.tag_icon %&#125;</span></span><br><span class="line"><span class="comment">#            &#123;%- set tag_indicate = &#x27;&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;&#x27; %&#125;</span></span><br><span class="line"><span class="comment">#          &#123;% else %&#125;</span></span><br><span class="line"><span class="comment">#            &#123;%- set tag_indicate = &#x27;#&#x27; %&#125;</span></span><br><span class="line"><span class="comment">#          &#123;%- endif %&#125;</span></span><br></pre></td></tr></table></figure>
 <p>然后将<code>rel=&quot;tag&quot;&gt;&#123;&#123; tag_indicate &#125;&#125;</code>修改为<code>rel=&quot;tag&quot;&gt;&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;</code> 也就是与之前的配置文件基本上相同了。</p>
 <p>第二种方式是将 if 判断内的 else 值修改为与 if 值 一样。((<em>&#x2F;ω＼</em>))</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- <span class="keyword">if</span> theme.tag_icon %&#125;</span><br><span class="line">  &#123;%- <span class="built_in">set</span> tag_indicate = <span class="string">&#x27;&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;&#x27;</span> %&#125;</span><br><span class="line">&#123;% <span class="keyword">else</span> %&#125;</span><br><span class="line">  &#123;%- <span class="built_in">set</span> tag_indicate = <span class="string">&#x27;&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;&#x27;</span> %&#125;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
-<p>两种方式均可以实现，任君挑选。</p>
+<p>三种方式均可以实现，任君挑选。</p>
 <h1 id="鼠标点击特效"><a href="#鼠标点击特效" class="headerlink" title="鼠标点击特效"></a>鼠标点击特效</h1><p>通过对比后发现next7.x取消了_custom&#x2F;custom.swig，也就是说旧版的&#x2F;layout&#x2F;_layout.swig中配置的调用custom.swig配置失效了。<br>在主题目录&#x2F;js&#x2F;内 创建cursor目录，将之前的四个特效文件可以直接拖到新的cursor目录内继续使用<br><strong>新的设置</strong><br>可以通过查看主题配置文件custom_file_path:处，确认调用的是source&#x2F;_data&#x2F;body-end.swig文件<br>此处注意！调用的swig文件的内容其实是没有发生任何变化的，只是位置不同了，<br>之前调用的是<code>主题目录内的``custom.swig</code><br>新的调用<code>body-end.swig</code>是从<code>站点目录</code>&#x2F;source&#x2F;_data&#x2F;内进行的调用！<br>打开站点目录&#x2F;source&#x2F;_data&#x2F; 创建body-end.swig文件，(默认应该是没有body-end.swig的,包括_data目录)<br>在body-end.swig中添加以下代码：（也可将原来的custom.swig直接改个名拖过来）</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="comment"># 鼠标点击特效 #&#125;</span></span><br><span class="line">&#123;% <span class="keyword">if</span> theme.cursor_effect == <span class="string">&quot;fireworks&quot;</span> %&#125;</span><br><span class="line">  &lt;script async src=<span class="string">&quot;/js/fireworks.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&#123;% elseif theme.cursor_effect == <span class="string">&quot;explosion&quot;</span> %&#125;</span><br><span class="line">  &lt;canvas class=<span class="string">&quot;fireworks&quot;</span> style=<span class="string">&quot;position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;&quot;</span> &gt;&lt;/canvas&gt;</span><br><span class="line">  &lt;script src=<span class="string">&quot;//cdn.bootcss.com/animejs/2.2.0/anime.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script async src=<span class="string">&quot;/js/explosion.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&#123;% elseif theme.cursor_effect == <span class="string">&quot;love&quot;</span> %&#125;</span><br><span class="line">  &lt;script async src=<span class="string">&quot;/js/love.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&#123;% elseif theme.cursor_effect == <span class="string">&quot;text&quot;</span> %&#125;</span><br><span class="line">  &lt;script async src=<span class="string">&quot;/js/text.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
 <p>然后在主题配置文件中删除<code>body-end.swig</code>行的<code>#</code>号注释：(新的内容)</p>
@@ -342,13 +345,40 @@
 
 <p>最后在主题配置文件中添加如下配置项：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 侧栏粒子时钟</span></span><br><span class="line">diy_time:</span><br><span class="line">  runtime: <span class="literal">true</span> </span><br><span class="line">  clock: <span class="literal">true</span> <span class="comment"># 粒子时钟</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="一键复制代码功能"><a href="#一键复制代码功能" class="headerlink" title="一键复制代码功能"></a>一键复制代码功能</h1><p>next7.x集成了此功能，不用像5.x那么折腾了<br>只需要在主题配置文件中定位<code>copy_button:</code>设置为<code>true</code>即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">copy_button:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span>       <span class="comment">#开关</span></span><br><span class="line">  <span class="comment"># Show text copy result.   #展示复制成功结果</span></span><br><span class="line">  show_result: <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Available values: default | flat | mac  #风格样式</span></span><br><span class="line">  style: mac</span><br></pre></td></tr></table></figure>
+
+<h1 id="自定义配置文件"><a href="#自定义配置文件" class="headerlink" title="自定义配置文件"></a>自定义配置文件</h1><p>由于7.x没有了custom，在搜索如何修改代码块样式自定义的时候看到一篇文章，居然可以直接在7.x自定义配置文件，超级方便，一口气按照教程添加了好几个功能，好使。</p>
+<p>首先在主题目录&#x2F;source&#x2F;css&#x2F;内，创建<code>_other.styl</code>文件<br>然后再主题目录&#x2F;source&#x2F;css&#x2F;内，找到main.styl文件并打开，在末尾添加如下调用配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//个人添加</span><br><span class="line">@import <span class="string">&quot;_other.styl&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>最后只需要将想实现的效果直接添加在<code>_other.styl</code>文件中就可以了<br>我在<code>_other.styl</code>中添加了如下功能，可以进行参考按需添加。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"> //背景图片  url内地址可替换成自己喜欢的图片链接或本地链接</span><br><span class="line">body &#123;</span><br><span class="line">     background:url(https://pic.heson10.com/img/image-20200712231958010.png);</span><br><span class="line">     background-repeat: no-repeat;</span><br><span class="line">     background-attachment:fixed;</span><br><span class="line">     background-size: cover;</span><br><span class="line">     background-position:50% 50%; &#125;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"> //博客内容透明化</span><br><span class="line">//文章内容的透明度设置</span><br><span class="line">.content-wrap &#123;</span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//侧边框的透明度设置</span><br><span class="line">.sidebar &#123;</span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//菜单栏的透明度设置</span><br><span class="line">.header-inner &#123;</span><br><span class="line">  background: rgba(255,255,255,0.9);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//搜索框（local-search）的透明度设置</span><br><span class="line">.popup &#123;</span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//首页顶部留白</span><br><span class="line">.container&#123;margin-top:10px;&#125; </span><br><span class="line"></span><br><span class="line">//首页banner渐变色</span><br><span class="line">.site-brand-container &#123;</span><br><span class="line">    background: linear-gradient(200deg, <span class="comment">#2e80a5, #0c0c0b);</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// ``代码块样式</span><br><span class="line">//code &#123;</span><br><span class="line">//    color: <span class="comment">#E6006B;</span></span><br><span class="line">//    background: white;</span><br><span class="line">//    border-radius: 0.3em;</span><br><span class="line">//&#125;</span><br><span class="line"></span><br><span class="line">code &#123;</span><br><span class="line">    color: <span class="comment">#ff7600;</span></span><br><span class="line">    background: <span class="comment">#fbf7f8;</span></span><br><span class="line">    margin: 2px;</span><br><span class="line">&#125;</span><br><span class="line">// 大代码块的自定义样式</span><br><span class="line">.highlight, pre &#123;</span><br><span class="line">    margin: 5px 0;</span><br><span class="line">    padding: 5px;</span><br><span class="line">    border-radius: 3px;</span><br><span class="line">&#125;</span><br><span class="line">.highlight, code, pre &#123;</span><br><span class="line">    border: 1px solid <span class="comment">#d6d6d6;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="添加页脚本站运行时长"><a href="#添加页脚本站运行时长" class="headerlink" title="添加页脚本站运行时长"></a>添加页脚本站运行时长</h1><p>进入主题配置文件，把footer.swig的注释去掉：<br>然后再站点目录&#x2F;source&#x2F;_data&#x2F;中新建footer.swig<br>编辑footer.swig，写入以下代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;span <span class="built_in">id</span>=<span class="string">&quot;sitetime&quot;</span>&gt;&lt;/span&gt;</span><br><span class="line">&lt;script language=javascript&gt;</span><br><span class="line">    <span class="keyword">function</span> <span class="function"><span class="title">siteTime</span></span>()&#123;</span><br><span class="line">        window.setTimeout(<span class="string">&quot;siteTime()&quot;</span>, 1000);</span><br><span class="line">        var seconds = 1000;</span><br><span class="line">        var minutes = seconds * 60;</span><br><span class="line">        var hours = minutes * 60;</span><br><span class="line">        var days = hours * 24;</span><br><span class="line">        var years = days * 365;</span><br><span class="line">        var today = new Date();</span><br><span class="line">        var todayYear = today.getFullYear();</span><br><span class="line">        var todayMonth = today.getMonth()+1;</span><br><span class="line">        var todayDate = today.getDate();</span><br><span class="line">        var todayHour = today.getHours();</span><br><span class="line">        var todayMinute = today.getMinutes();</span><br><span class="line">        var todaySecond = today.getSeconds();</span><br><span class="line">        /* Date.UTC() -- 返回<span class="built_in">date</span>对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)</span><br><span class="line">        year - 作为<span class="built_in">date</span>对象的年份，为4位年份值</span><br><span class="line">        month - 0-11之间的整数，做为<span class="built_in">date</span>对象的月份</span><br><span class="line">        day - 1-31之间的整数，做为<span class="built_in">date</span>对象的天数</span><br><span class="line">        hours - 0(午夜24点)-23之间的整数，做为<span class="built_in">date</span>对象的小时数</span><br><span class="line">        minutes - 0-59之间的整数，做为<span class="built_in">date</span>对象的分钟数</span><br><span class="line">        seconds - 0-59之间的整数，做为<span class="built_in">date</span>对象的秒数</span><br><span class="line">        microseconds - 0-999之间的整数，做为<span class="built_in">date</span>对象的毫秒数 */</span><br><span class="line">        var t1 = Date.UTC(2020,05,14,18,07,00); //北京时间2020-05-14 18:07</span><br><span class="line">        var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);</span><br><span class="line">        var diff = t2-t1;</span><br><span class="line">        var diffYears = Math.floor(diff/years);</span><br><span class="line">        var diffDays = Math.floor((diff/days)-diffYears*365);</span><br><span class="line">        var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);</span><br><span class="line">        var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);</span><br><span class="line">        var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);</span><br><span class="line">        document.getElementById(<span class="string">&quot;sitetime&quot;</span>).innerHTML=<span class="string">&quot;本站已苟且生存了 &quot;</span>+/*diffYears+<span class="string">&quot; 年 &quot;</span>+*/diffDays+<span class="string">&quot; 天 &quot;</span>+diffHours+<span class="string">&quot; 小时 &quot;</span>+diffMinutes+<span class="string">&quot; 分钟 &quot;</span>+diffSeconds+<span class="string">&quot; 秒&quot;</span>;</span><br><span class="line">    &#125;/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/</span><br><span class="line">    siteTime();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a target="_blank" rel="noopener" href="https://www.heson10.com/posts/46324.html">https://www.heson10.com/posts/46324.html</a><br><a target="_blank" rel="noopener" href="https://www.heson10.com/posts/52911.html">https://www.heson10.com/posts/52911.html</a><br><a target="_blank" rel="noopener" href="https://tding.top/archives/2bd6d82.html">https://tding.top/archives/2bd6d82.html</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/157883940">https://zhuanlan.zhihu.com/p/157883940</a></p>
+
     </div>
 
     
     
     
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px; margin-top:10px">-------------本文结束---感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
 
       <footer class="post-footer">
+          
           <div class="post-tags">
               <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag"><i class="fa fa-tag"></i> 博客搭建</a>
               <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 学习笔记</a>
@@ -423,7 +453,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7next-7-x"><span class="nav-number">2.</span> <span class="nav-text">升级next 7.x</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%AD%E8%A8%80%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">语言问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E9%A2%84%E8%A7%88-x2F-%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87"><span class="nav-number">4.</span> <span class="nav-text">文章预览&#x2F;阅读全文</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E5%90%8D%E7%A7%B0%E5%8F%8A%E7%AE%80%E4%BB%8B"><span class="nav-number">5.</span> <span class="nav-text">个人名称及简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1%E5%BC%82%E5%B8%B8"><span class="nav-number">6.</span> <span class="nav-text">字数统计异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AB%99%E7%82%B9%E8%AE%BF%E9%97%AE%E9%87%8F%E7%BB%9F%E8%AE%A1"><span class="nav-number">7.</span> <span class="nav-text">站点访问量统计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%8A%A8%E6%80%81%E8%83%8C%E6%99%AF"><span class="nav-number">8.</span> <span class="nav-text">添加动态背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%95%E9%83%A8%E6%A0%8F%E5%B0%8F%E5%BF%83%E5%BF%83"><span class="nav-number">9.</span> <span class="nav-text">底部栏小心心</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E6%96%87%E7%AB%A0%E5%BA%95%E9%83%A8%E7%9A%84-%E5%8F%B7%E6%A0%87%E7%AD%BE"><span class="nav-number">10.</span> <span class="nav-text">修改文章底部的#号标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E7%89%B9%E6%95%88"><span class="nav-number">11.</span> <span class="nav-text">鼠标点击特效</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#canvas-%E7%B2%92%E5%AD%90%E6%97%B6%E9%92%9F"><span class="nav-number">12.</span> <span class="nav-text">canvas 粒子时钟</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7next-7-x"><span class="nav-number">2.</span> <span class="nav-text">升级next 7.x</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%AD%E8%A8%80%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">语言问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E9%A2%84%E8%A7%88-x2F-%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87"><span class="nav-number">4.</span> <span class="nav-text">文章预览&#x2F;阅读全文</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E5%90%8D%E7%A7%B0%E5%8F%8A%E7%AE%80%E4%BB%8B"><span class="nav-number">5.</span> <span class="nav-text">个人名称及简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1%E5%BC%82%E5%B8%B8"><span class="nav-number">6.</span> <span class="nav-text">字数统计异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AB%99%E7%82%B9%E8%AE%BF%E9%97%AE%E9%87%8F%E7%BB%9F%E8%AE%A1"><span class="nav-number">7.</span> <span class="nav-text">站点访问量统计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%8A%A8%E6%80%81%E8%83%8C%E6%99%AF"><span class="nav-number">8.</span> <span class="nav-text">添加动态背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%95%E9%83%A8%E6%A0%8F%E5%B0%8F%E5%BF%83%E5%BF%83"><span class="nav-number">9.</span> <span class="nav-text">底部栏小心心</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E6%96%87%E7%AB%A0%E5%BA%95%E9%83%A8%E7%9A%84-%E5%8F%B7%E6%A0%87%E7%AD%BE"><span class="nav-number">10.</span> <span class="nav-text">修改文章底部的#号标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E7%89%B9%E6%95%88"><span class="nav-number">11.</span> <span class="nav-text">鼠标点击特效</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#canvas-%E7%B2%92%E5%AD%90%E6%97%B6%E9%92%9F"><span class="nav-number">12.</span> <span class="nav-text">canvas 粒子时钟</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E9%94%AE%E5%A4%8D%E5%88%B6%E4%BB%A3%E7%A0%81%E5%8A%9F%E8%83%BD"><span class="nav-number">13.</span> <span class="nav-text">一键复制代码功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">14.</span> <span class="nav-text">自定义配置文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E9%A1%B5%E8%84%9A%E6%9C%AC%E7%AB%99%E8%BF%90%E8%A1%8C%E6%97%B6%E9%95%BF"><span class="nav-number">15.</span> <span class="nav-text">添加页脚本站运行时长</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">16.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -766,18 +796,62 @@ if(canvas.getContext){
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">48k</span>
+    <span title="站点总字数">51k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">43 分钟</span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-  </div>
+    <span title="站点阅读时长">46 分钟</span>
+</div><span id="sitetime"></span>
+<script language=javascript>
+    function siteTime(){
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth()+1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2020,05,14,18,07,00); //北京时间2020-05-14 18:07
+        var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+        var diff = t2-t1;
+        var diffYears = Math.floor(diff/years);
+        var diffDays = Math.floor((diff/days)-diffYears*365);
+        var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+        var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+        var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+        document.getElementById("sitetime").innerHTML="本站已苟且生存了 "+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
 
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+  <span class="site-uv" title="总访客量">
+    我的第<span id="busuanzi_value_site_uv"></span>位朋友, 
+  </span>
+
+  <span class="site-pv" title="总访问量">
+    经过<span id="busuanzi_value_site_pv"></span>次回眸与你相遇
+  </span>
+</div>
 
 
 
