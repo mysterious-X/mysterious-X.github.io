@@ -20,17 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="爱音乐|爱滑雪|爱机车|爱生活">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mysterious-X Blog">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="在搭建win10环境时遇到的问题日常记录一下 创建好虚拟机后win10无法安装vm tools，报错：安装程序无法自动安装，VMCI驱动程序，必须手动安装此驱动程序。首先尝试了把vm从15.5卸载重装为了16没有解决。网上看了很多方案都是说win7的  微软更新了驱动程序的签名算法，从 2019 年初开始，逐步弃用SHA-1，改为SHA-2。百度了下推测新版的VMCI驱动用的是SHA-2签名，而w">
+<meta property="og:type" content="article">
+<meta property="og:title" content="win10安装vm tools报错">
+<meta property="og:url" content="http://example.com/2022/05/31/20220531vmtools/index.html">
 <meta property="og:site_name" content="Mysterious-X Blog">
-<meta property="og:description" content="爱音乐|爱滑雪|爱机车|爱生活">
+<meta property="og:description" content="在搭建win10环境时遇到的问题日常记录一下 创建好虚拟机后win10无法安装vm tools，报错：安装程序无法自动安装，VMCI驱动程序，必须手动安装此驱动程序。首先尝试了把vm从15.5卸载重装为了16没有解决。网上看了很多方案都是说win7的  微软更新了驱动程序的签名算法，从 2019 年初开始，逐步弃用SHA-1，改为SHA-2。百度了下推测新版的VMCI驱动用的是SHA-2签名，而w">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-31T15:19:45.000Z">
+<meta property="article:modified_time" content="2022-05-31T15:21:17.835Z">
 <meta property="article:author" content="Mr. X">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="排错记录">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/archives/">
+<link rel="canonical" href="http://example.com/2022/05/31/20220531vmtools/">
 
 
 <script id="page-configurations">
@@ -38,12 +42,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | Mysterious-X Blog</title>
+  <title>win10安装vm tools报错 | Mysterious-X Blog</title>
   
 
 
@@ -181,150 +185,133 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 6 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/31/20220531vmtools/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/shagou.jpg">
+      <meta itemprop="name" content="Mr. X">
+      <meta itemprop="description" content="爱音乐|爱滑雪|爱机车|爱生活">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mysterious-X Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          win10安装vm tools报错
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+              
+
+              <time title="创建时间：2022-05-31 23:19:45 / 修改时间：23:21:17" itemprop="dateCreated datePublished" datetime="2022-05-31T23:19:45+08:00">2022-05-31</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/win10/" itemprop="url" rel="index"><span itemprop="name">win10</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/VMware/" itemprop="url" rel="index"><span itemprop="name">VMware</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vm-tools/" itemprop="url" rel="index"><span itemprop="name">vm tools</span></a>
+                </span>
+            </span>
+
+          
+              <span>&emsp;</span><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>498</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-05-31T23:19:45+08:00"
-              content="2022-05-31">
-          05-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/05/31/20220531vmtools/" itemprop="url">
-            <span itemprop="name">win10安装vm tools报错</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-05-30T21:31:10+08:00"
-              content="2022-05-30">
-          05-30
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/05/30/test/" itemprop="url">
-            <span itemprop="name">test</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-05-26T18:07:52+08:00"
-              content="2022-05-26">
-          05-26
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/05/26/optimization-blog-2/" itemprop="url">
-            <span itemprop="name">nexT主题 - 版本升级及优化</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-05-18T17:59:40+08:00"
-              content="2022-05-18">
-          05-18
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/05/18/optimization_blog/" itemprop="url">
-            <span itemprop="name">Hexo + nexT主题 之 博客优化</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-05-16T00:51:37+08:00"
-              content="2022-05-16">
-          05-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/05/16/create_blog/" itemprop="url">
-            <span itemprop="name">记录：从零开始 搭建属于自己的blog</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-05-14T22:37:32+08:00"
-              content="2022-05-14">
-          05-14
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/05/14/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        <p>在搭建win10环境时遇到的问题日常记录一下</p>
+<p>创建好虚拟机后win10无法安装vm tools，报错：安装程序无法自动安装，VMCI驱动程序，必须手动安装此驱动程序。<br>首先尝试了把vm从15.5卸载重装为了16没有解决。<br>网上看了很多方案都是说win7的</p>
+<blockquote>
+<p>微软更新了驱动程序的签名算法，从 2019 年初开始，逐步弃用SHA-1，改为SHA-2。<br>百度了下推测新版的VMCI驱动用的是SHA-2签名，而win7不支持SHA-2签名，所以出现了这个问题。不过，可以通过安装KB4474419和KB4490628补丁来解决这个问题。</p>
+</blockquote>
+<p>但以上两个补丁好像并不适用于win10，尝试给win10打了些默认扫出来的补丁，都打好了后还是无法安装vm tools。<br>终于在<a target="_blank" rel="noopener" href="https://blog.csdn.net/wuqing0811/article/details/124402618%E6%90%9C%E7%B4%A2%E5%88%B0%E4%BA%86%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%8C">https://blog.csdn.net/wuqing0811/article/details/124402618搜索到了解决方案，</a><br>此博主也是网上搜了好多方法不好使，最终下载一个最新的vmTool安装包，解决了。<br>安装包地址：<a target="_blank" rel="noopener" href="http://soft.onlinedown.net/soft/984054.htm">http://soft.onlinedown.net/soft/984054.htm</a><br>下载后，直接在虚拟机里解压缩安装就可以正常安装了。</p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px; margin-top:10px">-------------本文结束---感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 学习笔记</a>
+              <a href="/tags/%E6%8E%92%E9%94%99%E8%AE%B0%E5%BD%95/" rel="tag"><i class="fa fa-tag"></i> 排错记录</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/05/30/test/" rel="prev" title="test">
+      <i class="fa fa-chevron-left"></i> test
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
